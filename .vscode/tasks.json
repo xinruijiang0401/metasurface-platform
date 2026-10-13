@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Metasurface: Web interface",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-m", "metasurface_platform", "serve", "--port", "8765"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Metasurface: Run example",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-m", "metasurface_platform", "run", "examples/metalens-532nm.yaml"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Metasurface: Tests",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-m", "pytest"],
+      "group": {"kind": "test", "isDefault": true},
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Metasurface web server",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "metasurface_platform",
+      "args": ["serve", "--port", "8765"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Design 532 nm metalens",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "metasurface_platform",
+      "args": ["run", "examples/metalens-532nm.yaml"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

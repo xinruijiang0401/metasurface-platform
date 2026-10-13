@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metasurface-open-platform"
+version = "0.1.0"
+description = "Reproducible open-source dielectric metalens design with user-specified beams"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+dependencies = [
+  "numpy==2.2.6",
+  "scipy==1.15.3",
+  "autograd==1.8.0",
+  "grcwa==0.1.2",
+  "gdstk==0.9.61",
+  "h5py==3.14.0",
+  "PyYAML==6.0.2",
+  "matplotlib==3.10.3",
+  "threadpoolctl==3.6.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.1"]
+
+[project.scripts]
+metasurface = "metasurface_platform.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+metasurface_platform = ["web/*.html", "web/*.js", "web/*.css", "data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --basetemp=.runtime/pytest-temp"
