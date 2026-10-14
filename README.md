@@ -6,11 +6,13 @@
 
 ## 本机快速开始
 
-已建立 `.venv` 环境。在 PowerShell 中切换到本目录：
+已建立 `.venv` 环境。Windows 可双击 `open-workbench.cmd`，它会在后台启动服务并打开浏览器；重复运行会复用已经就绪的服务。也可在 PowerShell 中切换到本目录：
 
 ```powershell
-.\.venv\Scripts\python.exe -m metasurface_platform serve --port 8765
+.\start-workbench.ps1
 ```
+
+关闭启动终端或浏览器后，后台服务继续运行；注销或重启后需再次打开启动入口。日志保存在 `.runtime/workbench-8765.stdout.log` 和 `.runtime/workbench-8765.stderr.log`，监听进程号保存在 `.runtime/workbench-8765.pid`。`-NoBrowser` 只启动服务；`-Foreground` 在未启动服务时保留前台调试方式，调试终端需要保持打开。
 
 浏览器访问 http://127.0.0.1:8765 。首页打开可交互设计画布，参数和仿真控制在侧栏；提供器件结构、入射光场、结果三种画布模式，可拖动旋转视角和单独移动探测器。界面不放自然语言需求输入框；侧栏助手显示可配置的本地 provider，并可基于当前参数启动自动设计。结构尺寸和色标以材料标识，运行前会标明几何示意，运行后再显示已保存的版图或数值场数据。探测器平面支持位置、法向、宽高、面内角度和 64 / 128 采样，截面来自已保存出口场的标量 RS-I 计算；缺数据时明确显示不可用，不画占位结果。倾斜入射光束可以预览，完整器件设计仍限法向入射响应库。
 
