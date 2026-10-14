@@ -6,7 +6,7 @@
 
 ## 本机快速开始
 
-已建立 `.venv` 环境。Windows 可双击 `open-workbench.cmd`，它会在后台启动服务并打开浏览器；重复运行会复用已经就绪的服务。也可在 PowerShell 中切换到本目录：
+Windows 首次下载或克隆本项目后，在 PowerShell 中切换到本目录并运行 `./bootstrap.ps1`，安装本项目使用的 Python 和锁定依赖；首次安装需要网络。安装完成后可双击 `open-workbench.cmd`，它会在后台启动服务并打开浏览器；重复运行会复用已经就绪的服务。也可在 PowerShell 中切换到本目录启动：
 
 ```powershell
 .\start-workbench.ps1
